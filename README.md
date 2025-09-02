@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ✨ BrainSpark
 
 **BrainSpark** is your offline magical AI study assistant ⚡ — built with **FastAPI** + **GPT-OSS** models.  
@@ -20,3 +21,7 @@ It helps students and learners ask questions, get instant answers, and study sma
 ```bash
 git clone https://github.com/KernelBornie/Brain-spark.git
 cd Brain-spark
+=======
+# Brain-spark
+✨ BrainSpark: Your offline magical AI study assistant built with FastAPI + GPT-OSS models
+>>>>>>> eb34141bedcc2cdc3051624680be112f60df921f
