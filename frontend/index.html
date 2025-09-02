@@ -1,26 +1,17 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>BrainSpark</title> 
-</head> 
-<body> 
-    <h1>✨ BrainSpark ✨</h1> 
-    <input type="text" id="query" placeholder="Type your question..." /> 
-    <button onclick="askBrainSpark()">Ask</button> 
-    <p id="response"></p> 
-<script> 
-async function askBrainSpark() { 
-    const query = document.getElementById('query').value; 
-    const response = await fetch('http://127.0.0.1:8000/ask', { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: JSON.stringify({ query }) 
-    }); 
-    const data = await response.json(); 
-    document.getElementById('response').innerText = data.answer; 
-} 
-</script> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BrainSpark AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BrainSpark AI</h1>
+        <textarea id="question" placeholder="Ask me anything..."></textarea>
+        <button onclick="askQuestion()">Ask</button>
+        <div id="answer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

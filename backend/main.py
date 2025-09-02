@@ -1,26 +1,14 @@
-from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
-import os
+from fastapi import FastAPI
+from app import BrainSparkAI
 
 app = FastAPI()
+brain_ai = BrainSparkAI()
 
-# CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
-
-# Model path (put your model files here)
-model_name = "models"
+@app.get("/")
+def read_root():
+    return {"message": "BrainSpark API is running!"}
 
 @app.post("/ask")
-async def ask(request: Request):
-    data = await request.json()
-    question = data.get("query", "")
-    return {
-        "question": question,
-        "answer": f"🤖 BrainSpark says: I understood your question '{question}'! (This is a sample answer.)"
-    }
+def ask_question(question: str):
+    answer = brain_ai.get_answer(question)
+    return {"question": question, "answer": answer}

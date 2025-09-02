@@ -1,6 +1,4 @@
 [
-  {"query": "Hello!"},
-  {"query": "What is Python?"},
-  {"query": "Tell me a fun fact about space."},
-  {"query": "How do I make a simple FastAPI endpoint?"}
+    {"question": "What is BrainSpark?", "answer": "BrainSpark is an offline AI study assistant."},
+    {"question": "How does it work?", "answer": "It uses GPT-OSS models locally to answer questions."}
 ]
