@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>BrainSpark</title> 
+</head> 
+<body> 
+    <h1>✨ BrainSpark ✨</h1> 
+    <input type="text" id="query" placeholder="Type your question..." /> 
+    <button onclick="askBrainSpark()">Ask</button> 
+    <p id="response"></p> 
+<script> 
+async function askBrainSpark() { 
+    const query = document.getElementById('query').value; 
+    const response = await fetch('http://127.0.0.1:8000/ask', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ query }) 
+    }); 
+    const data = await response.json(); 
+    document.getElementById('response').innerText = data.answer; 
+} 
+</script> 
+</body> 
+</html> 

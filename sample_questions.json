@@ -1,0 +1,6 @@
+[
+  {"query": "Hello!"},
+  {"query": "What is Python?"},
+  {"query": "Tell me a fun fact about space."},
+  {"query": "How do I make a simple FastAPI endpoint?"}
+]
