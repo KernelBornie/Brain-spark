@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>BrainSpark AI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>BrainSpark AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
+    h1 { color: #333; }
+    .chat-box { border: 1px solid #ccc; padding: 15px; background: #fff; width: 500px; }
+    input { width: 80%; padding: 10px; }
+    button { padding: 10px; }
+    .answer { margin-top: 15px; font-weight: bold; color: #0066cc; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>BrainSpark AI</h1>
-        <textarea id="question" placeholder="Ask me anything..."></textarea>
-        <button onclick="askQuestion()">Ask</button>
-        <div id="answer"></div>
-    </div>
-    <script src="script.js"></script>
+  <h1>BrainSpark AI</h1>
+  <div class="chat-box">
+    <input type="text" id="question" placeholder="Ask me anything...">
+    <button onclick="askAI()">Ask</button>
+    <div class="answer" id="answer"></div>
+  </div>
+
+  <script>
+    async function askAI() {
+      const question = document.getElementById("question").value;
+      const response = await fetch("http://127.0.0.1:8000/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
+      });
+      const data = await response.json();
+      document.getElementById("answer").innerText = "Answer: " + data.answer;
+    }
+  </script>
 </body>
 </html>

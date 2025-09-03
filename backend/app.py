@@ -1,6 +1,13 @@
-class BrainSparkAI:
-    def __init__(self):
-        self.model_loaded = True
+# backend/app.py
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-    def get_answer(self, question: str) -> str:
-        return f"Answer to '{question}' (simulated)."
+class Question(BaseModel):
+    query: str
+
+app = FastAPI(title="BrainSpark AI")
+
+@app.post("/ask")
+async def ask_question(question: Question):
+    # Simple mock AI response
+    return {"query": question.query, "answer": f"BrainSpark thinks: {question.query[::-1]}"}

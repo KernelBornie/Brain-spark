@@ -1,18 +1,9 @@
-# Brain-spark
+# BrainSpark AI
 
-✨ BrainSpark: Your offline magical AI study assistant built with FastAPI + GPT-OSS models
+This is a simple AI demo project using FastAPI for backend and plain HTML/CSS/JS frontend.
 
-BrainSpark helps students ask questions, get answers, and study smarter offline.
+## How to Run
 
-📖 Features
-- 🔌 Offline AI
-- 🎓 Q&A Assistant
-- ⚡ FastAPI Backend
-- 🖥️ Simple Frontend
-- 🔒 Privacy First
-
-🚀 Getting Started
-1️⃣ Clone the repository
+1. Install dependencies:
 ```bash
-git clone https://github.com/KernelBornie/Brain-spark.git
-cd Brain-spark
+pip install -r backend/requirements.txt
